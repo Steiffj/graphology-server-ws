@@ -1,0 +1,29 @@
+{
+  "name": "graphology-server-ws",
+  "version": "0.1.0",
+  "description": "Server-side processing for Graphology-based applications",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && npx tsc",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "preserve": "npm run build",
+    "serve": "concurrently \"tsc -w\" \"nodemon index dist/index.js\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "graphology": "^0.25.1",
+    "rimraf": "^5.0.1",
+    "rxjs": "^7.8.1",
+    "typescript": "^5.1.6",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@types/ws": "^8.5.5",
+    "nodemon": "^3.0.1"
+  }
+}
